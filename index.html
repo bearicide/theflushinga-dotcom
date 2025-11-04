@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Flushing A | Hometown Food Made Fun</title>
+  <link rel="icon" href="img/logo.png" />
+  <style>
+    :root {
+      --white: #ffffff;
+      --dark: #2b1d13;
+      --orange: #d86b26;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--white);
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      font-size: 1.25rem;
+    }
+    header {
+      background: var(--dark);
+      padding: 1rem 2rem;
+      border-bottom: 5px solid var(--orange);
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      background: var(--dark);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border: 2px solid var(--orange);
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    nav a:hover {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      border-top: 5px solid var(--dark);
+      border-bottom: 5px solid var(--dark);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      font-family: 'Georgia', serif;
+    }
+    .hero p {
+      font-size: 1.6rem;
+      color: var(--orange);
+      font-weight: 600;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 3px solid var(--orange);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+      font-family: 'Merriweather', 'Georgia', serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 2rem;
+    }
+    .hours img {
+      width: 100%;
+      max-width: 600px;
+      border: 3px solid var(--orange);
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 1rem;
+      border-top: 4px solid var(--orange);
+    }
+    footer img {
+      width: 100px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+    footer a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" target="_blank">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mailto:theflushinga.official@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>The Flushing A</h1>
+    <p>Taste the Tradition</p>
+  </div>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Since 1964, The Flushing A has been serving up hometown favorites with pride — from classic burgers and dogs to chili, fries, and shakes. Family owned and locally loved, we’re here to keep the tradition alive, one meal at a time.</p>
+    </section>
+
+    <section class="hours">
+      <h2>Current Hours</h2>
+      <img src="img/flushinga-hours.png" alt="The Flushing A Operating Hours" />
+    </section>
+  </main>
+
+  <footer>
+    <img src="img/logo.png" alt="The Flushing A logo" />
+    <p>© 2025 The Flushing A · <a href="https://github.com/mattbaier86/theflushinga-dotcom" target="_blank">GitHub</a></p>
+    <p>Slow down, sit down. You’re hungry.</p>
+  </footer>
+</body>
+</html>

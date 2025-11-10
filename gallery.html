@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CKC Gallery</title>
+  <meta name="description" content="Gallery of CKC and Feedbrain brand logos and artwork." />
+  <meta name="theme-color" content="#155c3a" />
+  <link rel="icon" href="https://bearicide.github.io/assets/favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
+
+    :root {
+      --bg:#155c3a;
+      --cream:#f7f4ec;
+      --maize:#FFCB05;
+      --blue:#00274C;
+      --hover-accent:#fff8c2;
+    }
+
+    html,body {
+      margin:0; padding:0; width:100%; min-height:100%;
+      font-family:'Raleway', sans-serif;
+      background:var(--bg); color:var(--cream);
+      display:flex; flex-direction:column; align-items:center;
+      animation:fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    h1 {
+      color:var(--maize);
+      margin-top:1.5rem;
+      font-size:2.4rem;
+      text-align:center;
+      font-weight:900;
+      letter-spacing:0.5px;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:18px;
+      padding:2rem;
+      width:90%;
+      max-width:900px;
+    }
+
+    .gallery img {
+      width:100%;
+      height:auto;
+      border-radius:14px;
+      cursor:pointer;
+      border:3px solid var(--cream);
+      background:rgba(255,255,255,0.05);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform:scale(1.05);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display:none;
+      position:fixed;
+      z-index:1000;
+      left:0; top:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.85);
+      justify-content:center; align-items:center;
+      animation:fadeIn 0.4s ease;
+    }
+
+    .lightbox img {
+      max-width:90%; max-height:80%;
+      border-radius:16px;
+      border:4px solid var(--maize);
+      box-shadow:0 6px 25px rgba(0,0,0,0.6);
+    }
+
+    .lightbox:target { display:flex; }
+
+    .btns {
+      margin-top:1.5rem;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btn {
+      background:var(--maize);
+      color:var(--blue);
+      font-weight:700;
+      padding:0.8rem 1.3rem;
+      border-radius:12px;
+      text-decoration:none;
+      position:relative;
+      overflow:hidden;
+      transition:transform 0.25s ease, background 0.3s ease;
+    }
+
+    .btn:hover { transform:scale(1.05); background:var(--hover-accent); }
+
+    footer {
+      margin:2rem auto 1rem;
+      font-size:0.9rem;
+      opacity:0.9;
+      text-align:center;
+      line-height:1.5;
+    }
+
+    footer code {
+      background:rgba(255,255,255,0.1);
+      padding:2px 6px;
+      border-radius:6px;
+      color:var(--maize);
+    }
+
+    footer a {
+      color:var(--maize);
+      text-decoration:none;
+      font-weight:700;
+      transition:color 0.3s ease;
+    }
+
+    footer a:hover {
+      color:var(--hover-accent);
+    }
+
+  </style>
+</head>
+<body>
+  <h1>CKC & Feedbrain Gallery</h1>
+
+  <div class="gallery">
+    <a href="#img1"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/ckc-forkmoon.png" alt="CKC Forkmoon Logo" /></a>
+    <a href="#img2"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/feedbrain-drafts.png" alt="Feedbrain Drafts" /></a>
+    <a href="#img3"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/feedbrain-logo.png" alt="Feedbrain Logo" /></a>
+  </div>
+
+  <!-- Lightboxes -->
+  <div id="img1" class="lightbox"><a href="#"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/ckc-forkmoon.png" alt="CKC Forkmoon Logo Expanded"></a></div>
+  <div id="img2" class="lightbox"><a href="#"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/feedbrain-drafts.png" alt="Feedbrain Drafts Expanded"></a></div>
+  <div id="img3" class="lightbox"><a href="#"><img src="https://bearicide.github.io/theflushinga-dotcom/assets/gallery/feedbrain-logo.png" alt="Feedbrain Logo Expanded"></a></div>
+
+  <div class="btns">
+    <a href="index.html" class="btn">Back to Portal</a>
+  </div>
+
+  <footer>
+    <p>Upload additional PNGs to <code>/assets/gallery/</code> to expand this gallery.</p>
+    <a href="https://github.com/bearicide" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+</body>
+</html>

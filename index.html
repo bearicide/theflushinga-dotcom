@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>$FOR SALE$ theflushinga.com is $FOR SALE$</title>
+  <title>theflushinga.com – this domain & concept are for sale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="theflushinga.com – your digital space and concept currently available. ~ Portal to Matt Baier's current projects including bearicide.github.io." />
+  <meta
+    name="description"
+    content="theflushinga.com – legacy drive-in style name, digital space, and concept currently available. Portal to Matt Baier projects including bearicide.github.io and demonstration sites."
+  />
 
   <style>
     :root {
@@ -20,20 +23,22 @@
       --shadow-soft: 0 0 40px rgba(0, 0, 0, 0.9);
       --radius-xl: 26px;
       --radius-lg: 18px;
+      --radius-pill: 999px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
         radial-gradient(circle at top, #25113a 0, #05020a 40%, #020107 80%);
       color: var(--text-main);
-      min-height: 100%;
+      min-height: 100vh;
     }
 
     body {
@@ -90,12 +95,14 @@
       display: grid;
       grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
       gap: 1.8rem;
+      align-items: flex-start;
     }
 
     @media (max-width: 800px) {
       .frame {
         padding: 1.7rem 1.2rem 1.4rem;
       }
+
       .inner {
         grid-template-columns: 1fr;
         gap: 1.4rem;
@@ -149,7 +156,7 @@
       border: 1px solid rgba(255, 225, 91, 0.85);
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.3rem;
       position: relative;
       overflow: hidden;
     }
@@ -172,8 +179,12 @@
     }
 
     @keyframes scroll-diagonal {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(40%, 40%, 0); }
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        transform: translate3d(40%, 40%, 0);
+      }
     }
 
     .sale-label {
@@ -270,7 +281,7 @@
       justify-content: center;
       gap: 0.35rem;
       padding: 0.6rem 0.85rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid rgba(255, 255, 255, 0.2);
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-yellow));
       color: #05030a;
@@ -283,6 +294,7 @@
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      text-align: center;
     }
 
     .btn:hover {
@@ -300,7 +312,7 @@
     }
 
     .btn-secondary span {
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     .label-small {
@@ -329,7 +341,7 @@
       align-items: center;
       justify-content: center;
       padding: 0.25rem 0.7rem;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: rgba(5, 8, 24, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.18);
       font-size: 0.74rem;
@@ -340,6 +352,59 @@
       color: var(--accent-yellow);
       font-weight: 600;
       margin-right: 0.25rem;
+    }
+
+    /* CONCEPTS SECTION */
+
+    #concepts {
+      margin-top: 1.6rem;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .concept-card {
+      border-radius: 14px;
+      padding: 0.7rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        radial-gradient(circle at top left, rgba(255, 77, 248, 0.18), transparent 55%),
+        rgba(7, 6, 20, 0.96);
+    }
+
+    .concept-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 0 0.15rem;
+    }
+
+    .concept-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0 0 0.4rem;
+    }
+
+    .concept-link {
+      font-size: 0.8rem;
+    }
+
+    .concept-link a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .concept-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 720px) {
+      .concept-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     footer {
@@ -358,15 +423,6 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 800px) {
-      .sale-banner {
-        margin-top: 0.9rem;
-      }
-      .panel {
-        padding: 0.9rem 0.85rem 0.8rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -377,7 +433,7 @@
         <header>
           <div class="tag">theflushinga.com</div>
           <h1 class="title-main">
-            <span>this space is for sale</span><br />
+            <span>this space is for sale ✨</span><br />
             domain · concept · digital presence
           </h1>
           <p class="subtitle">
@@ -405,7 +461,7 @@
 
         <!-- RIGHT: PORTAL / LINKS -->
         <aside class="panel" id="portal">
-          <div class="panel-header">Portal</div>
+          <div class="panel-header">Portal 🔗</div>
           <h2 class="panel-title">enter matt's digital projects</h2>
           <p class="panel-text">
             While theflushinga.com is looking for its next chapter, you can step through the
@@ -413,10 +469,20 @@
           </p>
 
           <div class="cta-group">
-            <a class="btn" href="https://bearicide.github.io/" target="_blank" rel="noopener">
+            <a
+              class="btn"
+              href="https://bearicide.github.io/"
+              target="_blank"
+              rel="noopener"
+            >
               visit bearicide.github.io
             </a>
-            <a class="btn btn-secondary" href="https://bearicide.github.io/pokemon/" target="_blank" rel="noopener">
+            <a
+              class="btn btn-secondary"
+              href="https://bearicide.github.io/pokemon/"
+              target="_blank"
+              rel="noopener"
+            >
               <span>pokémon collection &amp; sale binder</span>
             </a>
           </div>
@@ -436,10 +502,73 @@
 
           <div class="label-small">quick note</div>
           <div class="pill">
-            <span>heads up:</span> this is a live working splash, not a current restaurant site.
+            <span>concept:</span> this is a working splash and portfolio portal, not a current restaurant site.
           </div>
         </aside>
       </div>
+
+      <!-- CONCEPT DEMO SECTION -->
+      <section class="panel" id="concepts">
+        <div class="panel-header">concept showcase 🧪</div>
+        <h2 class="panel-title">website demos &amp; brand previews</h2>
+        <p class="panel-text">
+          These are example builds and prototype designs for potential restaurant and retail
+          partners. They are <strong>concepts only</strong> – not active business websites – and
+          exist to show what a modernized presence could look like.
+        </p>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <h3 class="concept-title">Trackside Café – Demo Site</h3>
+            <p class="concept-note">
+              A sample homepage layout for a cozy trackside café concept: menu highlights,
+              hours, and a simple, guest-friendly layout.
+            </p>
+            <p class="concept-link">
+              <a href="trackside-index.html" target="_blank" rel="noopener">
+                open trackside-index.html →
+              </a>
+            </p>
+          </article>
+
+          <article class="concept-card">
+            <h3 class="concept-title">Flushing A – Visual Upgrade Concept</h3>
+            <p class="concept-note">
+              A refreshed design pass exploring typography, color, and layout for a classic
+              local spot. Strictly a visual and structural concept.
+            </p>
+            <p class="concept-link">
+              <a href="flushinga-index.html" target="_blank" rel="noopener">
+                open flushinga-index.html →
+              </a>
+            </p>
+          </article>
+
+          <article class="concept-card">
+            <h3 class="concept-title">Asian Grocery Inventory Demo</h3>
+            <p class="concept-note">
+              A simple, functional prototype for an Asian grocery store inventory and browsing
+              experience: categories, items, and pricing structure.
+            </p>
+            <p class="concept-link">
+              <a href="asianstore-index.html" target="_blank" rel="noopener">
+                open asianstore-index.html →
+              </a>
+            </p>
+          </article>
+        </div>
+
+        <div class="label-small">demo notes</div>
+        <ul class="list">
+          <li>• All pages are working prototypes hosted within this portfolio.</li>
+          <li>• Written, designed, and assembled by Matt Baier.</li>
+          <li>• Purpose: demonstrate what a modern, readable web presence can become.</li>
+        </ul>
+
+        <div class="pill" style="margin-top:0.5rem;">
+          <span>reminder:</span> these demos are possibilities, not current operations.
+        </div>
+      </section>
 
       <footer>
         © <span>2025</span> theflushinga.com · inquiries to
@@ -450,5 +579,3 @@
   </div>
 </body>
 </html>
-
-

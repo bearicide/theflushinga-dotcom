@@ -1,183 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>theflushinga.com – this domain & concept are for sale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Comeback Kitchen Co. Portal</title>
-  <meta name="description" content="Gateway to The Flushing A, The Comeback Kitchen Company, and Matt Baier’s portfolio." />
-  <meta name="theme-color" content="#155c3a" />
-  <meta property="og:title" content="The Comeback Kitchen Co. Portal" />
-  <meta property="og:description" content="Gateway to The Flushing A, The Comeback Kitchen Company, and Matt Baier’s portfolio." />
-  <meta property="og:image" content="https://bearicide.github.io/assets/ckc-preview.jpg" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="https://bearicide.github.io/assets/favicon.ico" />
+  <meta name="description" content="theflushinga.com – legacy drive-in brand, digital space, and concept currently available. Portal to Matt Baier projects including bearicide.github.io." />
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
-
     :root {
-      --bg:#155c3a;
-      --cream:#f7f4ec;
-      --maize:#FFCB05;
-      --blue:#00274C;
-      --white:#ffffff;
-      --hover-accent:#fff8c2;
+      --bg: #03030a;
+      --bg-alt: #090915;
+      --panel: #101020;
+      --accent-pink: #ff4df8;
+      --accent-cyan: #47e9ff;
+      --accent-yellow: #ffe15b;
+      --text-main: #fdfdfd;
+      --text-muted: #a5a9c9;
+      --border-soft: rgba(255, 255, 255, 0.14);
+      --shadow-soft: 0 0 40px rgba(0, 0, 0, 0.9);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
     }
 
-    html,body{
-      margin:0;padding:0;min-height:100%;width:100%;
-      font-family:'Raleway', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, sans-serif;
-      background:var(--bg);color:var(--cream);
-      display:flex;justify-content:flex-start;align-items:center;flex-direction:column;text-align:center;
-      -webkit-text-size-adjust:100%;
-      text-rendering:optimizeLegibility;
-      animation:fadeIn 0.8s ease-in;
+    * {
+      box-sizing: border-box;
     }
 
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      width:100%;
-      max-width:740px;
-      margin-top:1.5rem;
-      margin-bottom:1rem;
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #25113a 0, #05020a 40%, #020107 80%);
+      color: var(--text-main);
+      min-height: 100%;
     }
 
-    header img{
-      width:60px;
-      height:60px;
-      object-fit:contain;
-      border-radius:50%;
-      background:var(--cream);
-      padding:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 10px 28px;
     }
 
-    main{
-      width:90%;max-width:740px;padding:1.5rem 2rem 2.5rem;
-      background:rgba(255,255,255,.07);
-      border:3px solid var(--cream);
-      border-radius:22px;
-      box-shadow:0 6px 25px rgba(0,0,0,.3);
-      box-sizing:border-box;
-      margin-top:0;
+    .page {
+      width: 100%;
+      max-width: 960px;
     }
 
-    h1{
-      font-size:clamp(2.4rem,5vw,3.4rem);
-      font-weight:900;margin:0.3rem 0 0.5rem 0;
-      color:var(--maize);line-height:1.25;letter-spacing:0.5px;
+    /* NEON FRAME */
+
+    .frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 2.2rem 1.8rem 1.8rem;
+      background:
+        radial-gradient(circle at top left, rgba(255, 77, 248, 0.15), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(71, 233, 255, 0.18), transparent 55%),
+        linear-gradient(180deg, rgba(7, 5, 20, 0.98), rgba(4, 3, 14, 0.99));
+      box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(255, 77, 248, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      overflow: hidden;
     }
 
-    h1 span{display:block;}
-
-    h2{font-weight:700;font-size:1.4rem;color:var(--cream);margin:.3rem 0 1rem;letter-spacing:0.8px;}
-    p{line-height:1.7;margin:.4rem 0 1rem;color:var(--cream);font-size:1.05rem;}
-
-    .ckc{
-      background:rgba(255,255,255,.1);
-      border:2px solid var(--maize);
-      border-radius:14px;
-      padding:1.4rem 1.8rem;
-      margin:1.2rem 0 2rem;
-      text-align:center;
-      box-shadow:inset 0 0 10px rgba(255,255,255,0.05);
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        conic-gradient(
+          from 220deg,
+          rgba(255, 77, 248, 0.7),
+          rgba(71, 233, 255, 0.7),
+          rgba(255, 225, 91, 0.8),
+          rgba(255, 77, 248, 0.7)
+        );
+      mix-blend-mode: screen;
+      opacity: 0.22;
+      filter: blur(6px);
     }
 
-    .ckc h3{color:var(--maize);font-size:1.4rem;margin-bottom:.4rem;font-weight:700;}
-    .ckc strong{color:var(--white);}    
-
-    a{color:var(--maize);text-decoration:none;font-weight:700;transition:color .25s ease;word-break:break-word;}
-    a:hover{color:var(--hover-accent);} 
-    a:focus-visible{outline:3px dashed var(--maize);outline-offset:3px;border-radius:8px;}
-
-    .links{
-      display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:1.2rem;text-align:center;
+    .inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.8rem;
     }
 
-    .link-btn{
-      position:relative;display:inline-block;background:var(--maize);color:var(--blue);
-      padding:.8rem 1.3rem;border-radius:12px;font-weight:700;overflow:hidden;
-      transition:transform .25s ease, background .3s ease;
-      min-width:160px;text-align:center;
+    @media (max-width: 800px) {
+      .frame {
+        padding: 1.7rem 1.2rem 1.4rem;
+      }
+      .inner {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
     }
 
-    .link-btn::before{
-      content:"";position:absolute;top:0;left:-150%;width:50%;height:100%;
-      background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
-      transform:skewX(-20deg);
+    /* LEFT: SPLASH */
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .link-btn:hover{transform:scale(1.05);background:var(--hover-accent);} 
-    .link-btn:hover::before{animation:shimmer 1.2s forwards;} 
-    .link-btn:focus-visible{outline:3px solid var(--white);outline-offset:3px;}
-
-    @keyframes shimmer{0%{left:-150%;}100%{left:150%;}}
-
-    @media (max-width:600px){
-      main{padding:1rem;}
-      h1{font-size:2.2rem;}
-      header img{width:48px;height:48px;}
-      .link-btn{min-width:130px;padding:.7rem 1rem;font-size:0.95rem;}
+    .tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-cyan);
+      opacity: 0.9;
     }
 
-    @media (prefers-reduced-motion: reduce){
-      .link-btn{transition:none;}
-      .link-btn:hover{transform:none;}
-      .link-btn::before{display:none;}
-      body{animation:none;}
+    .title-main {
+      font-size: clamp(1.7rem, 3.2vw, 2.1rem);
+      text-transform: lowercase;
+      margin: 0;
+      line-height: 1.18;
     }
 
-    footer{
-      margin-top:2rem;font-size:.9rem;opacity:.9;letter-spacing:0.4px;
-      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
-      line-height:1.4;text-align:center;width:100%;max-width:600px;margin-left:auto;margin-right:auto;
+    .title-main span {
+      color: var(--accent-yellow);
+      text-shadow:
+        0 0 12px rgba(255, 225, 91, 0.9),
+        0 0 22px rgba(255, 225, 91, 0.7);
     }
 
-    footer a{
-      color:var(--maize);
-      transition:color .3s ease;
+    .subtitle {
+      margin: 0.25rem 0 0;
+      font-size: 0.96rem;
+      color: var(--text-muted);
     }
 
-    footer a:hover{color:var(--hover-accent);} 
+    /* BIG FOR-SALE BANNER */
+
+    .sale-banner {
+      margin-top: 1.1rem;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      background:
+        linear-gradient(135deg, rgba(255, 77, 248, 0.1), rgba(255, 225, 91, 0.12));
+      border: 1px solid rgba(255, 225, 91, 0.85);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sale-banner::before {
+      content: "";
+      position: absolute;
+      inset: -120%;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255, 225, 91, 0.18),
+          rgba(255, 225, 91, 0.18) 8px,
+          transparent 8px,
+          transparent 16px
+        );
+      opacity: 0.35;
+      animation: scroll-diagonal 14s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scroll-diagonal {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(40%, 40%, 0); }
+    }
+
+    .sale-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-pink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .sale-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-pink);
+      box-shadow: 0 0 12px rgba(255, 77, 248, 0.9);
+    }
+
+    .sale-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-yellow);
+      text-shadow:
+        0 0 14px rgba(255, 225, 91, 0.9),
+        0 0 24px rgba(255, 77, 248, 0.7);
+      margin-top: 0.1rem;
+    }
+
+    .sale-subtext {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .email-line {
+      margin-top: 0.7rem;
+      font-size: 0.86rem;
+    }
+
+    .email-line a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .email-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* RIGHT: PORTAL / CTA */
+
+    .panel {
+      background: radial-gradient(circle at top, #222040 0, #121020 50%, #070612 100%);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1rem 0.9rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .panel-header {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.3rem;
+    }
+
+    .panel-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .panel-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 0.8rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.6rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-yellow));
+      color: #05030a;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow:
+        0 0 14px rgba(71, 233, 255, 0.7),
+        0 0 20px rgba(255, 225, 91, 0.5);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .btn:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-cyan);
+      box-shadow: none;
+      border-color: rgba(71, 233, 255, 0.6);
+      text-transform: none;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .btn-secondary span {
+      opacity: 0.8;
+    }
+
+    .label-small {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-top: 0.7rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .list li + li {
+      margin-top: 0.3rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(5, 8, 24, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .pill span {
+      color: var(--accent-yellow);
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+
+    footer {
+      margin-top: 0.9rem;
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .sale-banner {
+        margin-top: 0.9rem;
+      }
+      .panel {
+        padding: 0.9rem 0.85rem 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://bearicide.github.io/assets/gallery/ckc-forkmoon.png" alt="CKC Logo Left" />
-    <img src="https://bearicide.github.io/assets/gallery/ckc-forkmoon.png" alt="CKC Logo Right" />
-  </header>
+  <div class="page">
+    <div class="frame">
+      <div class="inner">
+        <!-- LEFT: SPLASH / FOR SALE -->
+        <header>
+          <div class="tag">theflushinga.com</div>
+          <h1 class="title-main">
+            <span>this space is for sale</span><br />
+            domain · concept · digital presence
+          </h1>
+          <p class="subtitle">
+            Legacy name, modern potential. This domain and its digital real estate are available
+            for someone who wants to build something new on top of a familiar name.
+          </p>
 
-  <main>
-    <h1><span>The Comeback</span><span>Kitchen Co.</span></h1>
+          <div class="sale-banner">
+            <div class="sale-label">
+              <span class="sale-dot"></span>
+              live listing · direct contact only
+            </div>
+            <div class="sale-text">
+              THIS IS FOR&nbsp;SALE
+            </div>
+            <p class="sale-subtext">
+              Domain, branding concepts, and web space are available. Ideal for a refreshed
+              restaurant presence, local media project, or community hub.
+            </p>
+            <p class="email-line">
+              Serious inquiries: <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a>
+            </p>
+          </div>
+        </header>
 
-    <div class="ckc" aria-label="Comeback Kitchen Company overview">
-      <h3>Full tables. Real community. Modern hospitality.</h3>
-      <p><strong>We build places people talk about.</strong></p>
-      <p>
-        The Comeback Kitchen Company (CKC) helps independent restaurants modernize without losing their soul. We combine design, tech, and operations to make small kitchens run smoother and look sharper online.
-      </p>
-      <p>
-        From digital menus and automation tools to brand kits and storytelling, CKC builds the bridge between classic hospitality and modern systems.
-      </p>
+        <!-- RIGHT: PORTAL / LINKS -->
+        <aside class="panel" id="portal">
+          <div class="panel-header">Portal</div>
+          <h2 class="panel-title">enter matt's digital projects</h2>
+          <p class="panel-text">
+            While theflushinga.com is looking for its next chapter, you can step through the
+            portal below to see current work, experiments, and live projects.
+          </p>
+
+          <div class="cta-group">
+            <a class="btn" href="https://bearicide.github.io/" target="_blank" rel="noopener">
+              visit bearicide.github.io
+            </a>
+            <a class="btn btn-secondary" href="https://bearicide.github.io/pokemon/" target="_blank" rel="noopener">
+              <span>pokémon collection &amp; sale binder</span>
+            </a>
+          </div>
+
+          <div class="label-small">how this portal works</div>
+          <ul class="list">
+            <li>• This page is a splash screen for the domain and its availability.</li>
+            <li>• Links above take you to live personal and project pages.</li>
+            <li>• All deals and conversations go directly through email.</li>
+          </ul>
+
+          <div class="label-small">session options</div>
+          <ul class="list">
+            <li>• Open to discussions about selling the domain and concept.</li>
+            <li>• Open to collaboration or consulting on digital relaunch ideas.</li>
+          </ul>
+
+          <div class="label-small">quick note</div>
+          <div class="pill">
+            <span>heads up:</span> this is a live working splash, not a current restaurant site.
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        © <span>2025</span> theflushinga.com · inquiries to
+        <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a> · portal powered by
+        <a href="https://bearicide.github.io/" target="_blank" rel="noopener">bearicide.github.io</a>
+      </footer>
     </div>
-
-    <h2>Portfolio Portal</h2>
-    <p>Choose where to go:</p>
-
-    <div class="links" role="navigation" aria-label="Portfolio links">
-      <a href="trackside-index.html" class="link-btn" aria-label="Open Trackside Cafe site" target="_blank" rel="noopener noreferrer">Trackside Café</a>
-      <a href="gallery.html" class="link-btn" aria-label="Open Gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
-      <a href="https://bearicide.github.io/" class="link-btn" aria-label="Open Matt Baier resume site" target="_blank" rel="noopener noreferrer">Matt Baier – Resume</a>
-    </div>
-
-    <footer>
-      <a href="https://theflushinga.com" target="_blank" rel="noopener noreferrer" aria-label="Go Home">Home</a>
-      <span>© 2025 Matt Baier</span>
-      <a href="https://github.com/bearicide" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">GitHub</a>
-    </footer>
-  </main>
+  </div>
 </body>
 </html>

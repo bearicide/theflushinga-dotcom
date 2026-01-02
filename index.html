@@ -1,457 +1,758 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Matt Baier — Comeback Kitchen Co.</title>
-  <meta name="description" content="Comeback Kitchen Co. (CKC): ops systems, menus/branding, and real-world kitchen cleaning & degreasing. Links + contact." />
+  <title>this domain is for sale - theflushinga.com – this domain & concept are for sale -</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="theflushinga.com – legacy drive-in style name, digital space, and concept currently available. Portal to Matt Baier projects including bearicide.github.io and demonstration sites."
+  />
 
   <style>
-    :root{
-      --bg:#0b0d12;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.72);
-      --line:rgba(255,255,255,.12);
-      --accent:#5fffd6;
-      --accent2:#a78bfa;
-      --shadow:0 16px 46px rgba(0,0,0,.55);
-      --radius:18px;
-      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+    :root {
+      --bg: #03030a;
+      --bg-alt: #090915;
+      --panel: #101020;
+      --accent-pink: #ff4df8;
+      --accent-cyan: #47e9ff;
+      --accent-yellow: #ffe15b;
+      --text-main: #fdfdfd;
+      --text-muted: #a5a9c9;
+      --border-soft: rgba(255, 255, 255, 0.14);
+      --shadow-soft: 0 0 40px rgba(0, 0, 0, 0.9);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #25113a 0, #05020a 40%, #020107 80%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 10px 28px;
+    }
+
+    .page { width: 100%; max-width: 960px; }
+
+    /* NEON FRAME */
+    .frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 2.2rem 1.8rem 1.8rem;
       background:
-        radial-gradient(1100px 600px at 12% 10%, rgba(167,139,250,.16), transparent 55%),
-        radial-gradient(900px 520px at 88% 18%, rgba(95,255,214,.12), transparent 60%),
-        radial-gradient(800px 700px at 50% 92%, rgba(255,255,255,.06), transparent 65%),
-        var(--bg);
-      min-height:100vh;
+        radial-gradient(circle at top left, rgba(255, 77, 248, 0.15), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(71, 233, 255, 0.18), transparent 55%),
+        linear-gradient(180deg, rgba(7, 5, 20, 0.98), rgba(4, 3, 14, 0.99));
+      box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(255, 77, 248, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      overflow: hidden;
     }
 
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:34px 16px 80px;
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        conic-gradient(
+          from 220deg,
+          rgba(255, 77, 248, 0.7),
+          rgba(71, 233, 255, 0.7),
+          rgba(255, 225, 91, 0.8),
+          rgba(255, 77, 248, 0.7)
+        );
+      mix-blend-mode: screen;
+      opacity: 0.22;
+      filter: blur(6px);
     }
 
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:var(--radius);
-      box-shadow:0 10px 30px rgba(0,0,0,.40);
-      backdrop-filter:blur(10px);
+    .inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 1.8rem;
+      align-items: flex-start;
     }
 
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-      min-width:0;
-    }
-    .dot{
-      width:11px;height:11px;border-radius:50%;
-      background:radial-gradient(circle at 30% 30%, #ffffff, var(--accent));
-      box-shadow:0 0 0 6px rgba(95,255,214,.10), 0 0 26px rgba(95,255,214,.22);
-      flex:0 0 auto;
-    }
-    .brand span{
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    @media (max-width: 800px) {
+      .frame { padding: 1.7rem 1.2rem 1.4rem; }
+      .inner { grid-template-columns: 1fr; gap: 1.4rem; }
     }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-shrink:0;
+    /* LEFT: SPLASH */
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(0,0,0,.22);
-      color:var(--muted);
-      font-family:var(--mono);
-      font-size:12px;
-      cursor:pointer;
-      user-select:none;
-      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-    }
-    .pill:hover{
-      transform:translateY(-1px);
-      border-color:rgba(95,255,214,.35);
-      box-shadow:0 0 0 6px rgba(95,255,214,.08);
-      text-decoration:none;
-    }
-    .pill .live{
-      width:8px;height:8px;border-radius:50%;
-      background:rgba(95,255,214,.95);
-      box-shadow:0 0 14px rgba(95,255,214,.30);
+    .tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-cyan);
+      opacity: 0.9;
     }
 
-    main{
-      margin-top:18px;
-      padding:22px 18px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(10px);
+    .title-main {
+      font-size: clamp(1.7rem, 3.2vw, 2.1rem);
+      text-transform: lowercase;
+      margin: 0;
+      line-height: 1.18;
     }
 
-    h1{
-      margin:0 0 6px;
-      font-size: clamp(28px, 4vw, 40px);
-      letter-spacing:-.5px;
-      line-height:1.08;
-    }
-    .sub{
-      margin:0 0 14px;
-      color:rgba(255,255,255,.78);
-      font-family:var(--mono);
-      font-size:13px;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-    }
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.6;
-      max-width:78ch;
+    .title-main span {
+      color: var(--accent-yellow);
+      text-shadow:
+        0 0 12px rgba(255, 225, 91, 0.9),
+        0 0 22px rgba(255, 225, 91, 0.7);
     }
 
-    .list{
-      margin:10px 0 18px;
-      padding-left:18px;
-      color:rgba(255,255,255,.80);
-    }
-    .list li{ margin:8px 0; }
-
-    .section-title{
-      margin:18px 0 10px;
-      font-size:16px;
-      letter-spacing:.2px;
+    .subtitle {
+      margin: 0.25rem 0 0;
+      font-size: 0.96rem;
+      color: var(--text-muted);
     }
 
-    .contact{
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.22);
-      padding:12px 12px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .contact .email{
-      font-family:var(--mono);
-      font-size:13px;
-      color:rgba(255,255,255,.86);
-    }
-    .btns{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      color:var(--text);
-      font-weight:700;
-      text-decoration:none;
-      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-      box-shadow:0 10px 22px rgba(0,0,0,.25);
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(95,255,214,.35);
-      box-shadow:0 14px 30px rgba(0,0,0,.35), 0 0 0 6px rgba(95,255,214,.08);
-      text-decoration:none;
+    /* BIG FOR-SALE BANNER */
+    .sale-banner {
+      margin-top: 1.1rem;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      background: linear-gradient(135deg, rgba(255, 77, 248, 0.1), rgba(255, 225, 91, 0.12));
+      border: 1px solid rgba(255, 225, 91, 0.85);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    footer{
-      margin-top:16px;
-      color:rgba(255,255,255,.58);
-      font-size:12px;
-      text-align:center;
-      font-family:var(--mono);
+    .sale-banner::before {
+      content: "";
+      position: absolute;
+      inset: -120%;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255, 225, 91, 0.18),
+          rgba(255, 225, 91, 0.18) 8px,
+          transparent 8px,
+          transparent 16px
+        );
+      opacity: 0.35;
+      animation: scroll-diagonal 14s linear infinite;
+      pointer-events: none;
     }
 
-    /* ===== Player Drawer (integrated “another way”) ===== */
-    .drawer-overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.40);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .16s ease;
-      z-index:9990;
-    }
-    .drawer{
-      position:fixed;
-      left:0; right:0;
-      bottom:0;
-      transform:translateY(102%);
-      transition:transform .18s ease;
-      z-index:9991;
-      padding:12px 12px 16px;
-    }
-    .drawer-inner{
-      max-width:980px;
-      margin:0 auto;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.16);
-      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      overflow:hidden;
-    }
-    .drawer-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 12px;
-      border-bottom:1px solid rgba(255,255,255,.12);
-    }
-    .drawer-title{
-      min-width:0;
-    }
-    .drawer-title strong{
-      display:block;
-      font-size:13px;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .drawer-title span{
-      display:block;
-      font-size:11px;
-      font-family:var(--mono);
-      color:rgba(255,255,255,.70);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .drawer-actions{
-      display:flex;
-      gap:8px;
-      flex-shrink:0;
-    }
-    .iconbtn{
-      width:36px;height:36px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(0,0,0,.20);
-      color:rgba(255,255,255,.88);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-      text-decoration:none;
-    }
-    .iconbtn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(95,255,214,.35);
-      box-shadow:0 0 0 6px rgba(95,255,214,.08);
-      text-decoration:none;
-    }
-    .drawer-body{
-      padding:10px 10px 12px;
-      background:rgba(0,0,0,.18);
-    }
-    .iframe-wrap{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.25);
-    }
-    .drawer-foot{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:8px 12px 12px;
-      font-size:12px;
-      color:rgba(255,255,255,.70);
-      font-family:var(--mono);
-    }
-    .drawer-foot a{ color:rgba(95,255,214,.92); font-weight:700; }
-
-    body.player-open .drawer-overlay{
-      opacity:1;
-      pointer-events:auto;
-    }
-    body.player-open .drawer{
-      transform:translateY(0);
+    @keyframes scroll-diagonal {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(40%, 40%, 0); }
     }
 
-    .sr-only{
-      position:absolute;
-      width:1px;height:1px;
-      padding:0;margin:-1px;
-      overflow:hidden;clip:rect(0,0,0,0);
-      white-space:nowrap;border:0;
+    .sale-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-pink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .sale-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-pink);
+      box-shadow: 0 0 12px rgba(255, 77, 248, 0.9);
+    }
+
+    .sale-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-yellow);
+      text-shadow:
+        0 0 14px rgba(255, 225, 91, 0.9),
+        0 0 24px rgba(255, 77, 248, 0.7);
+      margin-top: 0.1rem;
+    }
+
+    .sale-subtext {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 26rem;
+    }
+
+    .email-line { margin-top: 0.7rem; font-size: 0.86rem; }
+
+    .email-line a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .email-line a:hover { text-decoration: underline; }
+
+    /* RIGHT: PORTAL / CTA */
+    .panel {
+      background: radial-gradient(circle at top, #222040 0, #121020 50%, #070612 100%);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1rem 0.9rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .panel-header {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.3rem;
+    }
+
+    .panel-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .panel-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 0.8rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-yellow));
+      color: #05030a;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow:
+        0 0 14px rgba(71, 233, 255, 0.7),
+        0 0 20px rgba(255, 225, 91, 0.5);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .btn:hover { filter: brightness(1.05); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-cyan);
+      box-shadow: none;
+      border-color: rgba(71, 233, 255, 0.6);
+      text-transform: none;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+    .btn-secondary span { opacity: 0.9; }
+
+    .label-small {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-top: 0.7rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .list li + li { margin-top: 0.3rem; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(5, 8, 24, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+    .pill span {
+      color: var(--accent-yellow);
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
+
+    /* CONCEPTS SECTION */
+    #concepts { margin-top: 1.6rem; }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .concept-card {
+      border-radius: 14px;
+      padding: 0.7rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background:
+        radial-gradient(circle at top left, rgba(255, 77, 248, 0.18), transparent 55%),
+        rgba(7, 6, 20, 0.96);
+    }
+
+    .concept-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 0 0.15rem;
+    }
+
+    .concept-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0 0 0.4rem;
+    }
+
+    .concept-link { font-size: 0.8rem; }
+
+    .concept-link a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+    .concept-link a:hover { text-decoration: underline; }
+
+    @media (min-width: 720px) {
+      .concept-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    footer {
+      margin-top: 0.9rem;
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    /* ===========================
+       SOUNDCloud MINI PLAYER (non-intrusive)
+       =========================== */
+
+    .sc-fab {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      cursor: pointer;
+      user-select: none;
+      background:
+        linear-gradient(135deg, rgba(71,233,255,.22), rgba(255,225,91,.14), rgba(255,77,248,.18)),
+        rgba(5, 3, 12, .90);
+      box-shadow:
+        0 0 16px rgba(71,233,255,.35),
+        0 0 18px rgba(255,77,248,.22);
+      backdrop-filter: blur(10px);
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .sc-fab:hover { filter: brightness(1.05); }
+
+    .sc-led {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(71,233,255,.95);
+      box-shadow: 0 0 14px rgba(71,233,255,.75);
+    }
+
+    .sc-fab small{
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .10em;
+      color: rgba(253,253,253,.86);
+      opacity: .92;
+      text-transform: none;
+    }
+
+    .sc-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.46);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .16s ease;
+      z-index: 9997;
+    }
+
+    .sc-drawer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(105%);
+      transition: transform .18s ease;
+      z-index: 9998;
+      padding: 12px 12px 16px;
+    }
+
+    .sc-drawer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.16);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(255,77,248,.18), transparent 55%),
+        radial-gradient(circle at top right, rgba(71,233,255,.20), transparent 55%),
+        linear-gradient(180deg, rgba(8,6,20,.98), rgba(4,3,14,.99));
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .sc-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .sc-title {
+      min-width: 0;
+    }
+
+    .sc-title strong {
+      display: block;
+      font-size: 0.86rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sc-title span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sc-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .sc-iconbtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color: rgba(253,253,253,.92);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      box-shadow: 0 0 14px rgba(0,0,0,.35);
+    }
+
+    .sc-iconbtn:hover { filter: brightness(1.06); }
+
+    .sc-body {
+      padding: 10px 10px 12px;
+      background: rgba(0,0,0,.18);
+    }
+
+    .sc-iframewrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+    }
+
+    .sc-foot {
+      padding: 8px 12px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .sc-foot a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 650;
+    }
+    .sc-foot a:hover { text-decoration: underline; }
+
+    body.sc-open .sc-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    body.sc-open .sc-drawer {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 520px){
+      .sc-fab{
+        right: 12px;
+        bottom: 12px;
+        padding: 0.55rem 0.7rem;
+      }
+      .sc-fab span{ display:none; } /* keep it extra nonintrusive on tiny screens */
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Matt Baier</span>
+  <div class="page">
+    <div class="frame">
+      <div class="inner">
+        <!-- LEFT: SPLASH / FOR SALE -->
+        <header>
+          <div class="tag">theflushinga.com</div>
+          <h1 class="title-main">
+            <span>this space is for sale ✨</span><br />
+            domain · concept · digital presence
+          </h1>
+          <p class="subtitle">
+            Legacy name, modern potential. This domain and its digital real estate are available
+            for someone who wants to build something new on top of a familiar name.
+          </p>
+
+          <div class="sale-banner">
+            <div class="sale-label">
+              <span class="sale-dot"></span>
+              live listing · direct contact only
+            </div>
+            <div class="sale-text">
+              THIS IS FOR&nbsp;SALE
+            </div>
+            <p class="sale-subtext">
+              Domain, branding concepts, and web space are available. Ideal for a refreshed
+              restaurant presence, local media project, or community hub.
+            </p>
+            <p class="email-line">
+              Serious inquiries: <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a>
+            </p>
+          </div>
+        </header>
+
+        <!-- RIGHT: PORTAL / LINKS -->
+        <aside class="panel" id="portal">
+          <div class="panel-header">Portal 🔗</div>
+          <h2 class="panel-title">enter matt's digital projects</h2>
+          <p class="panel-text">
+            While theflushinga.com is looking for its next chapter, you can step through the
+            portal below to see current work, experiments, and live projects.
+          </p>
+
+          <div class="cta-group">
+            <a
+              class="btn"
+              href="https://bearicide.github.io/"
+              target="_blank"
+              rel="noopener"
+            >
+              visit bearicide.github.io!
+            </a>
+            <a
+              class="btn btn-secondary"
+              href="https://bearicide.github.io/pokemon/"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>pokémon collection &amp; sale binder</span>
+            </a>
+          </div>
+
+          <div class="label-small">how this portal works</div>
+          <ul class="list">
+            <li>• This page is a splash screen for the domain and its availability.</li>
+            <li>• Links above take you to live personal and project pages.</li>
+            <li>• All deals and conversations go directly through email.</li>
+          </ul>
+
+          <div class="label-small">session options</div>
+          <ul class="list">
+            <li>• Open to discussions about selling the domain and concept.</li>
+            <li>• Open to collaboration or consulting on digital relaunch ideas.</li>
+          </ul>
+
+          <div class="label-small">quick note</div>
+          <div class="pill">
+            <span>concept:</span> this is a working splash and portfolio portal, not a current restaurant site.
+          </div>
+        </aside>
       </div>
 
-      <div class="actions">
-        <!-- “Another way”: small pill opens a slide-up drawer -->
-        <button class="pill" id="nowPlayingBtn" type="button" title="Open music player">
-          <span class="live" aria-hidden="true"></span>
-          <span>now playing</span>
-          <span style="opacity:.85;">droning-dot-wave</span>
-        </button>
-      </div>
-    </header>
+      <!-- CONCEPT DEMO SECTION -->
+      <section class="panel" id="concepts">
+        <div class="panel-header">concept showcase 🧪</div>
+        <h2 class="panel-title">website demos &amp; brand previews</h2>
+        <p class="panel-text">
+          These are example builds and prototype designs for potential restaurant and retail
+          partners. They are <strong>concepts only</strong> – not active business websites – and
+          exist to show what a modernized presence could look like.
+        </p>
 
-    <main>
-      <h1>Matt Baier</h1>
-      <div class="sub">comeback kitchen co. · ops, design & cleaning</div>
+        <div class="concept-grid">
+          <article class="concept-card">
+            <h3 class="concept-title">Trackside Café – Demo Site</h3>
+            <p class="concept-note">
+              A sample homepage layout for a cozy trackside café concept: menu highlights,
+              hours, and a simple, guest-friendly layout.
+            </p>
+            <p class="concept-link">
+              <a href="trackside-index.html" target="_blank" rel="noopener">
+                open trackside-index.html →
+              </a>
+            </p>
+          </article>
 
-      <p>
-        I build systems for small kitchens: calmer service, clearer communication, and cleaner spaces.
-        Comeback Kitchen Co. (CKC) is about giving independent spots a second wind – from menus and workflow
-        to real-world degreasing and deep cleaning when the line has been through it.
-      </p>
+          <article class="concept-card">
+            <h3 class="concept-title">The Flushing A – Visual Upgrade Concept</h3>
+            <p class="concept-note">
+              A refreshed design pass exploring typography, color, and layout for a classic
+              local spot. Strictly a visual and structural concept.
+            </p>
+            <p class="concept-link">
+              <a href="theflushinga-index.html" target="_blank" rel="noopener">
+                open theflushinga-index.html →
+              </a>
+            </p>
+          </article>
 
-      <p>Service flow &amp; scheduling</p>
-      <p>CKC menus · branding · kitchen cleanup</p>
-      <p>✨ hoods, walls, floors &amp; “we gave up on that corner” areas</p>
-
-      <div class="section-title">Contact</div>
-      <div class="contact">
-        <div class="email">
-          <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a>
+          <article class="concept-card">
+            <h3 class="concept-title">Asian Grocery Inventory Demo</h3>
+            <p class="concept-note">
+              A simple, functional prototype for an Asian grocery store inventory and browsing
+              experience: categories, items, and pricing structure.
+            </p>
+            <p class="concept-link">
+              <a href="asianstore-index.html" target="_blank" rel="noopener">
+                open asianstore-index.html →
+              </a>
+            </p>
+          </article>
         </div>
-        <div class="btns">
-          <a class="btn" href="./pokemon/">Pokémon sale binder</a>
-          <a class="btn" href="https://github.com/bearicide" target="_blank" rel="noopener">GitHub profile</a>
+
+        <div class="label-small">demo notes</div>
+        <ul class="list">
+          <li>• All pages are working prototypes hosted within this portfolio.</li>
+          <li>• Written, designed, and assembled by Matt Baier.</li>
+          <li>• Purpose: demonstrate what a modern, readable web presence can become.</li>
+        </ul>
+
+        <div class="pill" style="margin-top:0.5rem;">
+          <span>reminder:</span> these demos are possibilities, not current operations.
         </div>
-      </div>
-
-      <p style="margin-top:14px;">
-        For CKC work (including on-site kitchen cleaning and degreasing), send a short email with your place,
-        pain points, and how “trashed” the kitchen is [1–10] scale.
-      </p>
-
-      <div class="section-title">about &amp; ckc services</div>
-      <p><strong>systems · reset · shine</strong></p>
-      <p>
-        CKC is for small operators who want restaurant-level standards without corporate nonsense:
-        clearer systems, better tools, and a kitchen that doesn’t feel like a crime scene once the lights come on.
-      </p>
-
-      <ul class="list">
-        <li><strong>Service &amp; shift flow</strong><br />
-          Ticket timing, expo flow, prep lists, and simple “do this next” systems that people actually follow.
-        </li>
-        <li><strong>Brand &amp; menus</strong><br />
-          Clean menus, readable layouts, and basic web presence so guests know when you’re open and what you serve.
-        </li>
-        <li><strong>Kitchen cleaning &amp; grease removal</strong><br />
-          Practical deep cleaning plans: line reset, walls, hoods, floors, and degreasing sessions that bring a kitchen back from the dead.
-        </li>
-      </ul>
-
-      <div class="section-title">live projects</div>
-      <p><strong>active &amp; for sale</strong></p>
-
-      <p style="margin-bottom:10px;"><strong>Pokémon Sale Binder</strong><br />
-        cards for sale
-      </p>
-      <p>
-        A live, always-evolving list of my current Pokémon inventory with rough value ranges.
-        Easy place to point people when you’re trying to sell or trade.
-      </p>
-      <p><a href="./pokemon/">Open the Pokémon binder · bearicide.github.io/pokemon →</a></p>
-
-      <p style="margin-top:18px;"><strong>Comeback Kitchen Co.</strong><br />
-        ops &amp; cleaning
-      </p>
-      <p>
-        Quietly helping small kitchens tighten up their systems, clean up their spaces, and tell their story better –
-        including real-world degreasing and deep cleaning as part of the reset.
-      </p>
-      <p>
-        Email <a href="mailto:matt.baier86@gmail.com?subject=CKC">matt.baier86@gmail.com</a> with “CKC” in the subject for availability and rates.
-      </p>
+      </section>
 
       <footer>
-        © 2025 Matt Baier · Comeback Kitchen Co. &amp; side quests · full rebuilds whenever the mood strikes.
+        © <span>2025</span> theflushinga.com · inquiries to
+        <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a> · portal powered by
+        <a href="https://bearicide.github.io/" target="_blank" rel="noopener">bearicide.github.io</a>
       </footer>
-    </main>
+    </div>
   </div>
 
-  <!-- Drawer UI -->
-  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <!-- Floating mini-player pill -->
+  <button class="sc-fab" id="scOpenBtn" type="button" title="Open music player">
+    <span class="sc-led" aria-hidden="true"></span>
+    <span>now playing</span>
+    <small>droning dot wave</small>
+  </button>
 
-  <section class="drawer" id="playerDrawer" aria-label="Music player">
-    <div class="drawer-inner">
-      <div class="drawer-head">
-        <div class="drawer-title">
-          <strong>Droning Dot Wave</strong>
-          <span>SoundCloud · polartiger · loops · starts quiet-ish</span>
+  <!-- Drawer overlay + drawer -->
+  <div class="sc-overlay" id="scOverlay" aria-hidden="true"></div>
+
+  <section class="sc-drawer" id="scDrawer" aria-label="SoundCloud player">
+    <div class="sc-drawer-inner">
+      <div class="sc-head">
+        <div class="sc-title">
+          <strong>droning dot wave</strong>
+          <span>SoundCloud · polartiger · loop · vol ~5%</span>
         </div>
-        <div class="drawer-actions">
-          <a class="iconbtn" href="https://soundcloud.com/polartiger/droning-dot-wave" target="_blank" rel="noopener" title="Open track on SoundCloud">↗</a>
-          <button class="iconbtn" id="closeDrawerBtn" type="button" title="Close player">✕</button>
+        <div class="sc-actions">
+          <a class="sc-iconbtn" href="https://soundcloud.com/polartiger/droning-dot-wave" target="_blank" rel="noopener" title="Open track on SoundCloud">↗</a>
+          <button class="sc-iconbtn" id="scCloseBtn" type="button" title="Close player">✕</button>
         </div>
       </div>
 
-      <div class="drawer-body">
-        <div class="iframe-wrap">
+      <div class="sc-body">
+        <div class="sc-iframewrap">
           <iframe
             id="scFrame"
             width="100%"
-            height="130"
+            height="135"
             scrolling="no"
             frameborder="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/polartiger/droning-dot-wave&color=%235fffd6&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/polartiger/droning-dot-wave&color=%2347e9ff&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
             title="SoundCloud player: Droning Dot Wave">
           </iframe>
         </div>
       </div>
 
-      <div class="drawer-foot">
-        <span>VOL target: ~5% (browser + SoundCloud have opinions)</span>
+      <div class="sc-foot">
+        <span>starts quiet, stays out of your way</span>
         <a href="https://soundcloud.com/polartiger" target="_blank" rel="noopener">soundcloud.com/polartiger</a>
       </div>
     </div>
@@ -461,41 +762,41 @@
   <script src="https://w.soundcloud.com/player/api.js"></script>
   <script>
     (function(){
-      const nowBtn   = document.getElementById('nowPlayingBtn');
-      const overlay  = document.getElementById('drawerOverlay');
-      const closeBtn = document.getElementById('closeDrawerBtn');
+      const openBtn  = document.getElementById('scOpenBtn');
+      const closeBtn = document.getElementById('scCloseBtn');
+      const overlay  = document.getElementById('scOverlay');
       const frame    = document.getElementById('scFrame');
-      const widget   = SC.Widget(frame);
 
-      function openPlayer(){
-        document.body.classList.add('player-open');
-        // Best-effort “quiet” start + loop. Autoplay usually requires user gesture, and this click counts.
+      const widget = SC.Widget(frame);
+
+      function openDrawer(){
+        document.body.classList.add('sc-open');
+        // user gesture -> autoplay less likely to be blocked
         try{
           widget.setLoop(true);
-          widget.setVolume(5); // 0-100
+          widget.setVolume(5); // 0–100
           widget.play();
         }catch(e){}
       }
 
-      function closePlayer(){
-        document.body.classList.remove('player-open');
+      function closeDrawer(){
+        document.body.classList.remove('sc-open');
       }
 
-      nowBtn.addEventListener('click', openPlayer);
-      overlay.addEventListener('click', closePlayer);
-      closeBtn.addEventListener('click', closePlayer);
+      openBtn.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
 
-      // Just in case: set defaults when ready
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
       widget.bind(SC.Widget.Events.READY, function(){
+        // Set defaults even before first open
         try{
           widget.setLoop(true);
           widget.setVolume(5);
         }catch(e){}
-      });
-
-      // Escape key closes
-      window.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') closePlayer();
       });
     })();
   </script>

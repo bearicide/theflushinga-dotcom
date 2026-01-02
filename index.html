@@ -2,47 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bearicide.github.io</title>
-  <meta name="description" content="Bearicide hub: projects, links, and music." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matt Baier — Comeback Kitchen Co.</title>
+  <meta name="description" content="Comeback Kitchen Co. (CKC): ops systems, menus/branding, and real-world kitchen cleaning & degreasing. Links + contact." />
 
   <style>
     :root{
-      --bg: #0b0d12;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.12);
-      --glow: rgba(95, 255, 214, .25);
-      --accent: #5fffd6;
-      --accent2: #a78bfa;
-      --shadow: 0 14px 40px rgba(0,0,0,.55);
-      --radius: 18px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bg:#0b0d12;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#5fffd6;
+      --accent2:#a78bfa;
+      --shadow:0 16px 46px rgba(0,0,0,.55);
+      --radius:18px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: var(--sans);
-      color: var(--text);
+      font-family:var(--sans);
+      color:var(--text);
       background:
-        radial-gradient(1100px 600px at 10% 10%, rgba(167,139,250,.16), transparent 55%),
-        radial-gradient(900px 500px at 90% 20%, rgba(95,255,214,.12), transparent 60%),
-        radial-gradient(800px 700px at 50% 90%, rgba(255,255,255,.06), transparent 65%),
+        radial-gradient(1100px 600px at 12% 10%, rgba(167,139,250,.16), transparent 55%),
+        radial-gradient(900px 520px at 88% 18%, rgba(95,255,214,.12), transparent 60%),
+        radial-gradient(800px 700px at 50% 92%, rgba(255,255,255,.06), transparent 65%),
         var(--bg);
       min-height:100vh;
     }
 
-    a{ color: var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
 
     .wrap{
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 42px 18px 120px;
+      max-width:980px;
+      margin:0 auto;
+      padding:34px 16px 80px;
     }
 
     header{
@@ -50,252 +49,270 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
+      padding:12px 14px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,.40);
+      backdrop-filter:blur(10px);
     }
 
     .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight: 800;
-      letter-spacing: .4px;
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+      min-width:0;
     }
-
     .dot{
-      width: 12px; height: 12px; border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffffff, var(--accent));
-      box-shadow: 0 0 0 6px rgba(95,255,214,.10), 0 0 26px rgba(95,255,214,.25);
+      width:11px;height:11px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, #ffffff, var(--accent));
+      box-shadow:0 0 0 6px rgba(95,255,214,.10), 0 0 26px rgba(95,255,214,.22);
+      flex:0 0 auto;
     }
-
-    .pill{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.22);
+    .brand span{
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
-    .hero{
-      margin-top: 26px;
-      padding: 26px 18px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    h1{
-      margin:0 0 8px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height:1.05;
-      letter-spacing: -0.6px;
-    }
-
-    p{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height:1.55;
-      max-width: 70ch;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .card{
-      grid-column: span 12;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-      padding: 16px;
-      backdrop-filter: blur(10px);
-    }
-
-    @media (min-width: 740px){
-      .card{ grid-column: span 6; }
-    }
-
-    .card h2{
-      margin:0 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.2px;
-    }
-
-    .card p{ margin: 0 0 12px; font-size: 14px; }
-    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      color: var(--text);
-      font-weight: 700;
-      text-decoration:none;
-      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-      box-shadow: 0 10px 22px rgba(0,0,0,.25);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(95,255,214,.35);
-      box-shadow: 0 14px 32px rgba(0,0,0,.35), 0 0 0 6px rgba(95,255,214,.08);
-      text-decoration:none;
-    }
-    .btn .tag{
-      font-family: var(--mono);
-      font-size: 12px;
-      color: rgba(255,255,255,.72);
-      border: 1px solid var(--line);
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.22);
-    }
-
-    /* ===== MINI PLAYER ===== */
-    .mini-player{
-      position: fixed;
-      right: 14px;
-      bottom: 14px;
-      width: min(360px, calc(100vw - 28px));
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      overflow: hidden;
-      z-index: 9999;
-    }
-
-    .mini-head{
+    .actions{
       display:flex;
-      align-items:center;
-      justify-content:space-between;
       gap:10px;
-      padding: 10px 12px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .mini-title{
-      display:flex;
-      flex-direction:column;
-      min-width: 0;
-    }
-    .mini-title strong{
-      font-size: 13px;
-      letter-spacing: .2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .mini-title span{
-      font-family: var(--mono);
-      font-size: 11px;
-      color: rgba(255,255,255,.70);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .mini-actions{
-      display:flex;
       align-items:center;
-      gap:8px;
       flex-shrink:0;
     }
 
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:12px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .pill:hover{
+      transform:translateY(-1px);
+      border-color:rgba(95,255,214,.35);
+      box-shadow:0 0 0 6px rgba(95,255,214,.08);
+      text-decoration:none;
+    }
+    .pill .live{
+      width:8px;height:8px;border-radius:50%;
+      background:rgba(95,255,214,.95);
+      box-shadow:0 0 14px rgba(95,255,214,.30);
+    }
+
+    main{
+      margin-top:18px;
+      padding:22px 18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+
+    h1{
+      margin:0 0 6px;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing:-.5px;
+      line-height:1.08;
+    }
+    .sub{
+      margin:0 0 14px;
+      color:rgba(255,255,255,.78);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.6;
+      max-width:78ch;
+    }
+
+    .list{
+      margin:10px 0 18px;
+      padding-left:18px;
+      color:rgba(255,255,255,.80);
+    }
+    .list li{ margin:8px 0; }
+
+    .section-title{
+      margin:18px 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+
+    .contact{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.22);
+      padding:12px 12px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .contact .email{
+      font-family:var(--mono);
+      font-size:13px;
+      color:rgba(255,255,255,.86);
+    }
+    .btns{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      color:var(--text);
+      font-weight:700;
+      text-decoration:none;
+      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+      box-shadow:0 10px 22px rgba(0,0,0,.25);
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(95,255,214,.35);
+      box-shadow:0 14px 30px rgba(0,0,0,.35), 0 0 0 6px rgba(95,255,214,.08);
+      text-decoration:none;
+    }
+
+    footer{
+      margin-top:16px;
+      color:rgba(255,255,255,.58);
+      font-size:12px;
+      text-align:center;
+      font-family:var(--mono);
+    }
+
+    /* ===== Player Drawer (integrated “another way”) ===== */
+    .drawer-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.40);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .16s ease;
+      z-index:9990;
+    }
+    .drawer{
+      position:fixed;
+      left:0; right:0;
+      bottom:0;
+      transform:translateY(102%);
+      transition:transform .18s ease;
+      z-index:9991;
+      padding:12px 12px 16px;
+    }
+    .drawer-inner{
+      max-width:980px;
+      margin:0 auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      overflow:hidden;
+    }
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .drawer-title{
+      min-width:0;
+    }
+    .drawer-title strong{
+      display:block;
+      font-size:13px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .drawer-title span{
+      display:block;
+      font-size:11px;
+      font-family:var(--mono);
+      color:rgba(255,255,255,.70);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .drawer-actions{
+      display:flex;
+      gap:8px;
+      flex-shrink:0;
+    }
     .iconbtn{
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.20);
-      color: rgba(255,255,255,.88);
+      width:36px;height:36px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.20);
+      color:rgba(255,255,255,.88);
       cursor:pointer;
       display:grid;
       place-items:center;
-      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+      transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+      text-decoration:none;
     }
     .iconbtn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(95,255,214,.40);
-      box-shadow: 0 0 0 6px rgba(95,255,214,.08);
+      transform:translateY(-1px);
+      border-color:rgba(95,255,214,.35);
+      box-shadow:0 0 0 6px rgba(95,255,214,.08);
+      text-decoration:none;
     }
-
-    .mini-body{
-      padding: 10px 10px 12px;
+    .drawer-body{
+      padding:10px 10px 12px;
+      background:rgba(0,0,0,.18);
     }
-
     .iframe-wrap{
-      border-radius: 12px;
+      border-radius:14px;
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.25);
     }
-
-    .mini-foot{
-      margin-top: 10px;
+    .drawer-foot{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:10px;
-      color: rgba(255,255,255,.70);
-      font-size: 12px;
-      padding: 0 2px;
+      padding:8px 12px 12px;
+      font-size:12px;
+      color:rgba(255,255,255,.70);
+      font-family:var(--mono);
+    }
+    .drawer-foot a{ color:rgba(95,255,214,.92); font-weight:700; }
+
+    body.player-open .drawer-overlay{
+      opacity:1;
+      pointer-events:auto;
+    }
+    body.player-open .drawer{
+      transform:translateY(0);
     }
 
-    .mini-foot a{
-      color: rgba(95,255,214,.92);
-      font-weight: 700;
-    }
-
-    .volume{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-family: var(--mono);
-      font-size: 11px;
-      color: rgba(255,255,255,.70);
-    }
-
-    .volbar{
-      width: 110px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.12);
-      position: relative;
-      overflow:hidden;
-    }
-    .volfill{
-      height:100%;
-      width: 5%;
-      background: linear-gradient(90deg, rgba(95,255,214,.95), rgba(167,139,250,.90));
-      box-shadow: 0 0 18px rgba(95,255,214,.25);
-    }
-
-    /* collapsed state */
-    .mini-player.collapsed .mini-body,
-    .mini-player.collapsed .mini-foot{
-      display:none;
-    }
-
-    /* small accessibility */
     .sr-only{
       position:absolute;
       width:1px;height:1px;
@@ -311,131 +328,175 @@
     <header>
       <div class="brand">
         <span class="dot" aria-hidden="true"></span>
-        <span>bearicide</span>
+        <span>Matt Baier</span>
       </div>
-      <span class="pill">misc hub • projects • links • noise</span>
+
+      <div class="actions">
+        <!-- “Another way”: small pill opens a slide-up drawer -->
+        <button class="pill" id="nowPlayingBtn" type="button" title="Open music player">
+          <span class="live" aria-hidden="true"></span>
+          <span>now playing</span>
+          <span style="opacity:.85;">droning-dot-wave</span>
+        </button>
+      </div>
     </header>
 
-    <section class="hero">
-      <h1>Welcome. Try not to break anything.</h1>
+    <main>
+      <h1>Matt Baier</h1>
+      <div class="sub">comeback kitchen co. · ops, design & cleaning</div>
+
       <p>
-        This is the hub. The mini player in the corner is the important part,
-        because humans love music but hate clicking twice.
+        I build systems for small kitchens: calmer service, clearer communication, and cleaner spaces.
+        Comeback Kitchen Co. (CKC) is about giving independent spots a second wind – from menus and workflow
+        to real-world degreasing and deep cleaning when the line has been through it.
       </p>
 
-      <div class="grid">
-        <div class="card">
-          <h2>Pokémon cards</h2>
-          <p>Listings + info. Prices change. Reality is cruel.</p>
-          <div class="btnrow">
-            <a class="btn" href="./pokemon/"><span>Open</span> <span class="tag">/pokemon</span></a>
-          </div>
-        </div>
+      <p>Service flow &amp; scheduling</p>
+      <p>CKC menus · branding · kitchen cleanup</p>
+      <p>✨ hoods, walls, floors &amp; “we gave up on that corner” areas</p>
 
-        <div class="card">
-          <h2>SoundCloud</h2>
-          <p>All tracks on your profile.</p>
-          <div class="btnrow">
-            <a class="btn" href="https://soundcloud.com/polartiger" target="_blank" rel="noopener">
-              <span>Profile</span> <span class="tag">polartiger</span>
-            </a>
-          </div>
+      <div class="section-title">Contact</div>
+      <div class="contact">
+        <div class="email">
+          <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a>
+        </div>
+        <div class="btns">
+          <a class="btn" href="./pokemon/">Pokémon sale binder</a>
+          <a class="btn" href="https://github.com/bearicide" target="_blank" rel="noopener">GitHub profile</a>
         </div>
       </div>
-    </section>
+
+      <p style="margin-top:14px;">
+        For CKC work (including on-site kitchen cleaning and degreasing), send a short email with your place,
+        pain points, and how “trashed” the kitchen is [1–10] scale.
+      </p>
+
+      <div class="section-title">about &amp; ckc services</div>
+      <p><strong>systems · reset · shine</strong></p>
+      <p>
+        CKC is for small operators who want restaurant-level standards without corporate nonsense:
+        clearer systems, better tools, and a kitchen that doesn’t feel like a crime scene once the lights come on.
+      </p>
+
+      <ul class="list">
+        <li><strong>Service &amp; shift flow</strong><br />
+          Ticket timing, expo flow, prep lists, and simple “do this next” systems that people actually follow.
+        </li>
+        <li><strong>Brand &amp; menus</strong><br />
+          Clean menus, readable layouts, and basic web presence so guests know when you’re open and what you serve.
+        </li>
+        <li><strong>Kitchen cleaning &amp; grease removal</strong><br />
+          Practical deep cleaning plans: line reset, walls, hoods, floors, and degreasing sessions that bring a kitchen back from the dead.
+        </li>
+      </ul>
+
+      <div class="section-title">live projects</div>
+      <p><strong>active &amp; for sale</strong></p>
+
+      <p style="margin-bottom:10px;"><strong>Pokémon Sale Binder</strong><br />
+        cards for sale
+      </p>
+      <p>
+        A live, always-evolving list of my current Pokémon inventory with rough value ranges.
+        Easy place to point people when you’re trying to sell or trade.
+      </p>
+      <p><a href="./pokemon/">Open the Pokémon binder · bearicide.github.io/pokemon →</a></p>
+
+      <p style="margin-top:18px;"><strong>Comeback Kitchen Co.</strong><br />
+        ops &amp; cleaning
+      </p>
+      <p>
+        Quietly helping small kitchens tighten up their systems, clean up their spaces, and tell their story better –
+        including real-world degreasing and deep cleaning as part of the reset.
+      </p>
+      <p>
+        Email <a href="mailto:matt.baier86@gmail.com?subject=CKC">matt.baier86@gmail.com</a> with “CKC” in the subject for availability and rates.
+      </p>
+
+      <footer>
+        © 2025 Matt Baier · Comeback Kitchen Co. &amp; side quests · full rebuilds whenever the mood strikes.
+      </footer>
+    </main>
   </div>
 
-  <!-- ===== Mini Player Dock ===== -->
-  <aside class="mini-player" id="miniPlayer" aria-label="Mini music player">
-    <div class="mini-head">
-      <div class="mini-title">
-        <strong>Droning Dot Wave</strong>
-        <span>SoundCloud • polartiger • loops</span>
-      </div>
+  <!-- Drawer UI -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
-      <div class="mini-actions">
-        <button class="iconbtn" id="togglePlayer" title="Collapse/expand player" aria-controls="playerBody" aria-expanded="true">
-          <span id="toggleIcon" aria-hidden="true">▾</span>
-          <span class="sr-only">Toggle player</span>
-        </button>
-        <a class="iconbtn" href="https://soundcloud.com/polartiger/droning-dot-wave" target="_blank" rel="noopener" title="Open track on SoundCloud" style="text-decoration:none;">
-          <span aria-hidden="true">↗</span>
-          <span class="sr-only">Open track</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="mini-body" id="playerBody">
-      <div class="iframe-wrap">
-        <!-- SoundCloud Widget -->
-        <iframe
-          id="scFrame"
-          width="100%"
-          height="120"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/polartiger/droning-dot-wave&color=%235fffd6&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
-          title="SoundCloud player: Droning Dot Wave">
-        </iframe>
-      </div>
-
-      <div class="mini-foot">
-        <div class="volume" title="Requested: start around 5% volume (SoundCloud embed is limited)">
-          <span>VOL</span>
-          <div class="volbar" aria-hidden="true"><div class="volfill"></div></div>
-          <span>~5%</span>
+  <section class="drawer" id="playerDrawer" aria-label="Music player">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <div class="drawer-title">
+          <strong>Droning Dot Wave</strong>
+          <span>SoundCloud · polartiger · loops · starts quiet-ish</span>
         </div>
-        <div>
-          <a href="https://soundcloud.com/polartiger" target="_blank" rel="noopener">soundcloud.com/polartiger</a>
+        <div class="drawer-actions">
+          <a class="iconbtn" href="https://soundcloud.com/polartiger/droning-dot-wave" target="_blank" rel="noopener" title="Open track on SoundCloud">↗</a>
+          <button class="iconbtn" id="closeDrawerBtn" type="button" title="Close player">✕</button>
         </div>
       </div>
+
+      <div class="drawer-body">
+        <div class="iframe-wrap">
+          <iframe
+            id="scFrame"
+            width="100%"
+            height="130"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/polartiger/droning-dot-wave&color=%235fffd6&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"
+            title="SoundCloud player: Droning Dot Wave">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="drawer-foot">
+        <span>VOL target: ~5% (browser + SoundCloud have opinions)</span>
+        <a href="https://soundcloud.com/polartiger" target="_blank" rel="noopener">soundcloud.com/polartiger</a>
+      </div>
     </div>
-  </aside>
+  </section>
 
   <!-- SoundCloud Widget API -->
   <script src="https://w.soundcloud.com/player/api.js"></script>
   <script>
     (function(){
-      const miniPlayer = document.getElementById('miniPlayer');
-      const toggleBtn  = document.getElementById('togglePlayer');
-      const toggleIcon = document.getElementById('toggleIcon');
-      const frame      = document.getElementById('scFrame');
-      const widget     = SC.Widget(frame);
+      const nowBtn   = document.getElementById('nowPlayingBtn');
+      const overlay  = document.getElementById('drawerOverlay');
+      const closeBtn = document.getElementById('closeDrawerBtn');
+      const frame    = document.getElementById('scFrame');
+      const widget   = SC.Widget(frame);
 
-      // Collapse/expand
-      toggleBtn.addEventListener('click', () => {
-        const collapsed = miniPlayer.classList.toggle('collapsed');
-        toggleIcon.textContent = collapsed ? '▸' : '▾';
-        toggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-      });
-
-      // Try to set loop + low volume.
-      // NOTE: SoundCloud embed doesn't guarantee volume control works the way a native <audio> element does.
-      // We'll attempt anyway, then keep it polite.
-      function setDefaults(){
-        try {
-          widget.setVolume(5);           // 0-100
-          widget.setLoop(true);          // loop track
-          widget.play();                 // may be blocked until user interacts
-        } catch (e) {}
+      function openPlayer(){
+        document.body.classList.add('player-open');
+        // Best-effort “quiet” start + loop. Autoplay usually requires user gesture, and this click counts.
+        try{
+          widget.setLoop(true);
+          widget.setVolume(5); // 0-100
+          widget.play();
+        }catch(e){}
       }
 
+      function closePlayer(){
+        document.body.classList.remove('player-open');
+      }
+
+      nowBtn.addEventListener('click', openPlayer);
+      overlay.addEventListener('click', closePlayer);
+      closeBtn.addEventListener('click', closePlayer);
+
+      // Just in case: set defaults when ready
       widget.bind(SC.Widget.Events.READY, function(){
-        setDefaults();
+        try{
+          widget.setLoop(true);
+          widget.setVolume(5);
+        }catch(e){}
       });
 
-      // If autoplay is blocked, we "arm" it: first user click/tap anywhere triggers play + volume.
-      let armed = false;
-      function armOnce(){
-        if (armed) return;
-        armed = true;
-        setDefaults();
-        window.removeEventListener('pointerdown', armOnce, {passive:true});
-        window.removeEventListener('keydown', armOnce);
-      }
-      window.addEventListener('pointerdown', armOnce, {passive:true});
-      window.addEventListener('keydown', armOnce);
+      // Escape key closes
+      window.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') closePlayer();
+      });
     })();
   </script>
 </body>

@@ -135,7 +135,8 @@
       margin-top: 1.1rem;
       border-radius: var(--radius-lg);
       padding: 0.9rem 1rem;
-      background: linear-gradient(135deg, rgba(255, 77, 248, 0.1), rgba(255, 225, 91, 0.12));
+      background:
+        linear-gradient(135deg, rgba(255, 77, 248, 0.1), rgba(255, 225, 91, 0.12));
       border: 1px solid rgba(255, 225, 91, 0.85);
       display: flex;
       flex-direction: column;
@@ -203,7 +204,6 @@
     }
 
     .email-line { margin-top: 0.7rem; font-size: 0.86rem; }
-
     .email-line a {
       color: var(--accent-cyan);
       text-decoration: none;
@@ -268,6 +268,7 @@
       letter-spacing: 0.08em;
       text-align: center;
     }
+
     .btn:hover { filter: brightness(1.05); }
 
     .btn-secondary {
@@ -279,6 +280,7 @@
       letter-spacing: 0.04em;
       font-weight: 500;
     }
+
     .btn-secondary span { opacity: 0.9; }
 
     .label-small {
@@ -297,6 +299,7 @@
       font-size: 0.8rem;
       color: var(--text-muted);
     }
+
     .list li + li { margin-top: 0.3rem; }
 
     .pill {
@@ -310,6 +313,7 @@
       font-size: 0.74rem;
       color: var(--text-muted);
     }
+
     .pill span {
       color: var(--accent-yellow);
       font-weight: 600;
@@ -353,6 +357,7 @@
       color: var(--accent-cyan);
       text-decoration: none;
     }
+
     .concept-link a:hover { text-decoration: underline; }
 
     @media (min-width: 720px) {
@@ -367,16 +372,12 @@
       opacity: 0.85;
     }
 
-    footer a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-    }
+    footer a { color: var(--accent-cyan); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
     /* ===========================
-       SOUNDCloud MINI PLAYER (non-intrusive)
+       SOUNDCloud MINI PLAYER
        =========================== */
-
     .sc-fab {
       position: fixed;
       right: 16px;
@@ -467,9 +468,7 @@
       border-bottom: 1px solid rgba(255,255,255,.12);
     }
 
-    .sc-title {
-      min-width: 0;
-    }
+    .sc-title { min-width: 0; }
 
     .sc-title strong {
       display: block;
@@ -490,11 +489,7 @@
       text-overflow: ellipsis;
     }
 
-    .sc-actions {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
+    .sc-actions { display: flex; gap: 8px; flex-shrink: 0; }
 
     .sc-iconbtn {
       width: 36px;
@@ -534,29 +529,297 @@
       color: var(--text-muted);
     }
 
-    .sc-foot a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-      font-weight: 650;
-    }
+    .sc-foot a { color: var(--accent-cyan); text-decoration: none; font-weight: 650; }
     .sc-foot a:hover { text-decoration: underline; }
 
-    body.sc-open .sc-overlay {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    body.sc-open .sc-drawer {
-      transform: translateY(0);
-    }
+    body.sc-open .sc-overlay { opacity: 1; pointer-events: auto; }
+    body.sc-open .sc-drawer { transform: translateY(0); }
 
     @media (max-width: 520px){
-      .sc-fab{
-        right: 12px;
-        bottom: 12px;
-        padding: 0.55rem 0.7rem;
-      }
-      .sc-fab span{ display:none; } /* keep it extra nonintrusive on tiny screens */
+      .sc-fab{ right: 12px; bottom: 12px; padding: 0.55rem 0.7rem; }
+      .sc-fab span{ display:none; }
+    }
+
+    /* ===========================
+       SLOT WIDGET + LEADERBOARD
+       =========================== */
+    #slot-panel {
+      margin-top: 1.6rem;
+    }
+
+    .slot-wrap{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: .9rem;
+      align-items: start;
+    }
+    @media (max-width: 820px){
+      .slot-wrap{ grid-template-columns: 1fr; }
+    }
+
+    .slot-machine{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(circle at top left, rgba(255,225,91,.12), transparent 55%),
+        radial-gradient(circle at top right, rgba(71,233,255,.16), transparent 55%),
+        rgba(7,6,20,.96);
+      padding: .9rem;
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .slot-topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:.6rem;
+    }
+
+    .slot-brand{
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--accent-pink);
+      opacity: .95;
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      white-space: nowrap;
+    }
+    .slot-brand .spark{
+      width:10px;height:10px;border-radius:999px;
+      background: var(--accent-pink);
+      box-shadow: 0 0 14px rgba(255,77,248,.85);
+    }
+
+    .slot-stats{
+      display:flex;
+      gap:.5rem;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .stat{
+      font-size:.72rem;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(5,8,24,.75);
+      border-radius: var(--radius-pill);
+      padding: .25rem .55rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .stat b{ color: var(--accent-yellow); font-weight: 700; }
+
+    .reels{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:.6rem;
+      margin:.7rem 0 .75rem;
+    }
+
+    .reel{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.28));
+      box-shadow:
+        inset 0 0 20px rgba(0,0,0,.55),
+        0 0 16px rgba(71,233,255,.10);
+      height: 96px;
+      display:grid;
+      place-items:center;
+      font-size: 2.3rem;
+      text-shadow:
+        0 0 14px rgba(255,225,91,.35),
+        0 0 18px rgba(71,233,255,.22);
+      user-select:none;
+    }
+
+    .slot-controls{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.7rem;
+      flex-wrap: wrap;
+    }
+
+    .slot-controls .left,
+    .slot-controls .right{
+      display:flex;
+      gap:.55rem;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+    .slot-btn{
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: .58rem .9rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-yellow));
+      color:#05030a;
+      box-shadow:
+        0 0 14px rgba(71,233,255,.55),
+        0 0 18px rgba(255,225,91,.35);
+    }
+    .slot-btn:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      filter:saturate(.7);
+    }
+    .slot-btn.secondary{
+      background: transparent;
+      color: var(--accent-cyan);
+      box-shadow: none;
+      border-color: rgba(71,233,255,.55);
+      text-transform:none;
+      letter-spacing:.04em;
+      font-weight: 600;
+    }
+
+    .bet{
+      display:flex;
+      align-items:center;
+      gap:.45rem;
+      font-size:.78rem;
+      color: var(--text-muted);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(5,8,24,.75);
+      border-radius: var(--radius-pill);
+      padding: .35rem .55rem;
+    }
+    .bet input{
+      width: 84px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: .82rem;
+    }
+
+    .slot-msg{
+      margin-top:.65rem;
+      font-size:.82rem;
+      color: var(--text-muted);
+      min-height: 1.2em;
+    }
+    .slot-msg b{ color: var(--accent-yellow); }
+
+    .leaderboard{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(circle at top left, rgba(255,77,248,.14), transparent 55%),
+        rgba(7,6,20,.96);
+      padding: .9rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lb-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:.6rem;
+    }
+    .lb-head .title{
+      font-size:.78rem;
+      text-transform: uppercase;
+      letter-spacing:.18em;
+      color: var(--accent-cyan);
+    }
+    .lb-head .note{
+      font-size:.72rem;
+      color: var(--text-muted);
+      opacity:.9;
+      white-space: nowrap;
+    }
+
+    .lb-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:.4rem;
+    }
+
+    .lb-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:.45rem .55rem;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      font-size:.82rem;
+      color: rgba(253,253,253,.88);
+    }
+    .lb-item small{
+      color: var(--text-muted);
+      font-size:.74rem;
+    }
+    .lb-item b{
+      color: var(--accent-yellow);
+      font-weight: 800;
+    }
+
+    .lb-actions{
+      display:flex;
+      gap:.55rem;
+      align-items:center;
+      flex-wrap: wrap;
+      margin-top:.65rem;
+    }
+    .lb-actions input{
+      flex: 1 1 120px;
+      border-radius: var(--radius-pill);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(5,8,24,.75);
+      color: var(--text-main);
+      padding: .5rem .7rem;
+      outline: none;
+      font-size: .82rem;
+    }
+    .lb-actions input::placeholder{ color: rgba(165,169,201,.85); }
+
+    .lb-actions button{
+      border-radius: var(--radius-pill);
+      border:1px solid rgba(255,255,255,.18);
+      padding:.55rem .8rem;
+      cursor:pointer;
+      background: linear-gradient(135deg, rgba(255,77,248,.85), rgba(255,225,91,.78));
+      color:#05030a;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      box-shadow:
+        0 0 14px rgba(255,77,248,.35),
+        0 0 18px rgba(255,225,91,.25);
+    }
+    .lb-actions button.secondary{
+      background: transparent;
+      color: var(--accent-cyan);
+      box-shadow:none;
+      border-color: rgba(71,233,255,.55);
+      text-transform:none;
+      letter-spacing:.04em;
+      font-weight: 600;
+    }
+
+    .tiny-muted{
+      margin-top:.55rem;
+      font-size:.72rem;
+      color: var(--text-muted);
+      opacity:.9;
+      line-height:1.35;
     }
   </style>
 </head>
@@ -581,9 +844,7 @@
               <span class="sale-dot"></span>
               live listing · direct contact only
             </div>
-            <div class="sale-text">
-              THIS IS FOR&nbsp;SALE
-            </div>
+            <div class="sale-text">THIS IS FOR&nbsp;SALE</div>
             <p class="sale-subtext">
               Domain, branding concepts, and web space are available. Ideal for a refreshed
               restaurant presence, local media project, or community hub.
@@ -604,20 +865,10 @@
           </p>
 
           <div class="cta-group">
-            <a
-              class="btn"
-              href="https://bearicide.github.io/"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn" href="https://bearicide.github.io/" target="_blank" rel="noopener">
               visit bearicide.github.io!
             </a>
-            <a
-              class="btn btn-secondary"
-              href="https://bearicide.github.io/pokemon/"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn btn-secondary" href="https://bearicide.github.io/pokemon/" target="_blank" rel="noopener">
               <span>pokémon collection &amp; sale binder</span>
             </a>
           </div>
@@ -705,6 +956,68 @@
         </div>
       </section>
 
+      <!-- SLOT WIDGET -->
+      <section class="panel" id="slot-panel">
+        <div class="panel-header">slot widget 🎰</div>
+        <h2 class="panel-title">tiny casino energy (local leaderboard)</h2>
+        <p class="panel-text">
+          This leaderboard is stored in your browser (localStorage). For a global leaderboard, you’ll need a backend.
+        </p>
+
+        <div class="slot-wrap">
+          <div class="slot-machine" aria-label="Slot machine">
+            <div class="slot-topline">
+              <div class="slot-brand"><span class="spark" aria-hidden="true"></span> neon micro slots</div>
+              <div class="slot-stats">
+                <div class="stat">credits: <b id="creditsOut">100</b></div>
+                <div class="stat">best: <b id="bestOut">100</b></div>
+                <div class="stat">wins: <b id="winsOut">0</b></div>
+              </div>
+            </div>
+
+            <div class="reels" role="group" aria-label="Reels">
+              <div class="reel" id="r0">🍒</div>
+              <div class="reel" id="r1">⚡</div>
+              <div class="reel" id="r2">💎</div>
+            </div>
+
+            <div class="slot-controls">
+              <div class="left">
+                <button class="slot-btn" id="spinBtn" type="button">spin</button>
+                <button class="slot-btn secondary" id="newGameBtn" type="button">new game</button>
+              </div>
+              <div class="right">
+                <div class="bet">
+                  bet
+                  <input id="betIn" type="number" min="1" max="50" step="1" value="5" inputmode="numeric" />
+                </div>
+              </div>
+            </div>
+
+            <div class="slot-msg" id="msgOut">Hit <b>SPIN</b>. Try not to develop a personality disorder.</div>
+          </div>
+
+          <aside class="leaderboard" aria-label="Leaderboard">
+            <div class="lb-head">
+              <div class="title">local leaderboard</div>
+              <div class="note">top 10</div>
+            </div>
+
+            <ol class="lb-list" id="lbList"></ol>
+
+            <div class="lb-actions">
+              <input id="nameIn" type="text" maxlength="18" placeholder="name (optional)" />
+              <button id="submitBtn" type="button">submit score</button>
+              <button class="secondary" id="resetLbBtn" type="button">reset</button>
+            </div>
+
+            <div class="tiny-muted">
+              Score = your <b>best credits</b> reached this run. Submitting saves it locally in this browser.
+            </div>
+          </aside>
+        </div>
+      </section>
+
       <footer>
         © <span>2025</span> theflushinga.com · inquiries to
         <a href="mailto:matt.baier86@gmail.com">matt.baier86@gmail.com</a> · portal powered by
@@ -728,7 +1041,7 @@
       <div class="sc-head">
         <div class="sc-title">
           <strong>droning dot wave</strong>
-          <span>SoundCloud · polartiger · loop · vol ~50%</span>
+          <span>SoundCloud · polartiger · loop · vol ~5%</span>
         </div>
         <div class="sc-actions">
           <a class="sc-iconbtn" href="https://soundcloud.com/polartiger/droning-dot-wave" target="_blank" rel="noopener" title="Open track on SoundCloud">↗</a>
@@ -760,8 +1073,10 @@
 
   <!-- SoundCloud Widget API -->
   <script src="https://w.soundcloud.com/player/api.js"></script>
+
   <script>
     (function(){
+      // ===== SoundCloud drawer =====
       const openBtn  = document.getElementById('scOpenBtn');
       const closeBtn = document.getElementById('scCloseBtn');
       const overlay  = document.getElementById('scOverlay');
@@ -771,10 +1086,9 @@
 
       function openDrawer(){
         document.body.classList.add('sc-open');
-        // user gesture -> autoplay less likely to be blocked
         try{
           widget.setLoop(true);
-          widget.setVolume(50); // 0–100
+          widget.setVolume(5); // change to 50 if you want 50%
           widget.play();
         }catch(e){}
       }
@@ -792,14 +1106,225 @@
       });
 
       widget.bind(SC.Widget.Events.READY, function(){
-        // Set defaults even before first open
         try{
           widget.setLoop(true);
-          widget.setVolume(50);
+          widget.setVolume(5);
         }catch(e){}
       });
+
+      // ===== Slot widget + local leaderboard =====
+      const SYMBOLS = ["🍒","⚡","💎","🍀","👾","🔥","🍋"];
+      const payouts = {
+        "3": { // three of a kind
+          "🍒": 8,
+          "⚡": 10,
+          "💎": 18,
+          "🍀": 12,
+          "👾": 14,
+          "🔥": 16,
+          "🍋": 9
+        },
+        "2": { // two of a kind (any)
+          "any": 2
+        }
+      };
+
+      const rEls = [document.getElementById('r0'), document.getElementById('r1'), document.getElementById('r2')];
+      const creditsOut = document.getElementById('creditsOut');
+      const bestOut = document.getElementById('bestOut');
+      const winsOut = document.getElementById('winsOut');
+      const msgOut = document.getElementById('msgOut');
+      const betIn = document.getElementById('betIn');
+      const spinBtn = document.getElementById('spinBtn');
+      const newGameBtn = document.getElementById('newGameBtn');
+
+      const lbList = document.getElementById('lbList');
+      const nameIn = document.getElementById('nameIn');
+      const submitBtn = document.getElementById('submitBtn');
+      const resetLbBtn = document.getElementById('resetLbBtn');
+
+      const LB_KEY = "tfa_slot_leaderboard_v1";
+
+      let credits = 100;
+      let best = 100;
+      let wins = 0;
+      let spinning = false;
+
+      function clamp(n, min, max){
+        return Math.max(min, Math.min(max, n));
+      }
+
+      function randSym(){
+        return SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
+      }
+
+      function setMsg(html){
+        msgOut.innerHTML = html;
+      }
+
+      function renderStats(){
+        creditsOut.textContent = String(credits);
+        bestOut.textContent = String(best);
+        winsOut.textContent = String(wins);
+      }
+
+      function loadLB(){
+        try{
+          const raw = localStorage.getItem(LB_KEY);
+          const data = raw ? JSON.parse(raw) : [];
+          return Array.isArray(data) ? data : [];
+        }catch(e){
+          return [];
+        }
+      }
+
+      function saveLB(entries){
+        localStorage.setItem(LB_KEY, JSON.stringify(entries));
+      }
+
+      function renderLB(){
+        const entries = loadLB()
+          .sort((a,b) => (b.score||0) - (a.score||0))
+          .slice(0,10);
+
+        lbList.innerHTML = "";
+        if(entries.length === 0){
+          const li = document.createElement("li");
+          li.className = "lb-item";
+          li.innerHTML = `<span><small>no scores yet</small></span><span><b>0</b></span>`;
+          lbList.appendChild(li);
+          return;
+        }
+
+        entries.forEach((e, idx) => {
+          const li = document.createElement("li");
+          li.className = "lb-item";
+          const name = (e.name && String(e.name).trim()) ? String(e.name).trim() : "anonymous";
+          const when = e.when ? new Date(e.when).toLocaleDateString() : "";
+          li.innerHTML = `<span>${idx+1}. ${escapeHtml(name)} <small>${escapeHtml(when)}</small></span><span><b>${Number(e.score||0)}</b></span>`;
+          lbList.appendChild(li);
+        });
+      }
+
+      function escapeHtml(str){
+        return String(str)
+          .replaceAll("&","&amp;")
+          .replaceAll("<","&lt;")
+          .replaceAll(">","&gt;")
+          .replaceAll('"',"&quot;")
+          .replaceAll("'","&#039;");
+      }
+
+      function submitScore(){
+        const entries = loadLB();
+        const name = (nameIn.value || "").trim().slice(0,18);
+        const entry = { name: name || "anonymous", score: best, when: new Date().toISOString() };
+        entries.push(entry);
+        saveLB(entries);
+        renderLB();
+        setMsg(`Score saved: <b>${best}</b> (${escapeHtml(entry.name)}). Local browser glory achieved.`);
+      }
+
+      function resetGame(){
+        credits = 100;
+        best = 100;
+        wins = 0;
+        rEls[0].textContent = "🍒";
+        rEls[1].textContent = "⚡";
+        rEls[2].textContent = "💎";
+        renderStats();
+        setMsg(`New game. Start with <b>${credits}</b> credits. Don’t spend it all in one… oh wait.`);
+      }
+
+      function evalWin(reels, bet){
+        const [a,b,c] = reels;
+        // 3 of a kind
+        if(a===b && b===c){
+          const mult = payouts["3"][a] || 10;
+          return { win: bet * mult, kind: "3", sym: a, mult };
+        }
+        // 2 of a kind
+        if(a===b || a===c || b===c){
+          const mult = payouts["2"]["any"];
+          return { win: bet * mult, kind: "2", sym: "", mult };
+        }
+        return { win: 0, kind: "0", sym: "", mult: 0 };
+      }
+
+      async function spin(){
+        if(spinning) return;
+        spinning = true;
+
+        let bet = parseInt(betIn.value, 10);
+        if(Number.isNaN(bet)) bet = 5;
+        bet = clamp(bet, 1, 50);
+        betIn.value = String(bet);
+
+        if(credits < bet){
+          setMsg(`You have <b>${credits}</b> credits. Your bet is <b>${bet}</b>. Math says no.`);
+          spinning = false;
+          return;
+        }
+
+        credits -= bet;
+        renderStats();
+        setMsg(`Spinning… betting <b>${bet}</b>.`);
+
+        spinBtn.disabled = true;
+        newGameBtn.disabled = true;
+
+        // cheap “spin” animation: cycle symbols briefly
+        const cycles = 14;
+        for(let i=0;i<cycles;i++){
+          rEls.forEach(el => el.textContent = randSym());
+          await new Promise(r => setTimeout(r, 55 + i*2));
+        }
+
+        const reels = [randSym(), randSym(), randSym()];
+        rEls.forEach((el, i) => el.textContent = reels[i]);
+
+        const result = evalWin(reels, bet);
+        if(result.win > 0){
+          credits += result.win;
+          wins += 1;
+          best = Math.max(best, credits);
+          renderStats();
+
+          if(result.kind === "3"){
+            setMsg(`🔥 <b>TRIPLE</b> ${reels[0]} ${reels[1]} ${reels[2]} — win <b>${result.win}</b> (x${result.mult}).`);
+          } else {
+            setMsg(`✨ Two of a kind. Win <b>${result.win}</b> (x${result.mult}).`);
+          }
+        } else {
+          setMsg(`No win. ${reels.join(" ")}. Keep trying, it’s definitely a great life plan.`);
+        }
+
+        if(credits <= 0){
+          setMsg(`Out of credits. Best score: <b>${best}</b>. Submit it if you want local bragging rights.`);
+        }
+
+        spinBtn.disabled = false;
+        newGameBtn.disabled = false;
+        spinning = false;
+      }
+
+      spinBtn.addEventListener("click", spin);
+      newGameBtn.addEventListener("click", resetGame);
+
+      submitBtn.addEventListener("click", submitScore);
+
+      resetLbBtn.addEventListener("click", () => {
+        localStorage.removeItem(LB_KEY);
+        renderLB();
+        setMsg(`Leaderboard cleared (locally). The past is dead. Like it should be.`);
+      });
+
+      // init
+      renderStats();
+      renderLB();
+
+      // If you want the game to remember credits per visitor later, we can persist session state too.
     })();
   </script>
 </body>
 </html>
-
